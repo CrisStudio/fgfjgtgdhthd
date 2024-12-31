@@ -1,0 +1,740 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ----- ----- Google fonts ----- ----- */
+/*
+  font-family: 'Bellefair', serif;
+  font-family: 'Lato', sans-serif;
+*/
+
+*, *:before, *::after{
+  box-sizing: inherit;
+}
+
+body{
+  background-color: #f2f2f2;
+  font-family: 'Lato', sans-serif;
+}
+
+.container{
+  width: auto;
+  margin: 40px;
+  padding: 0px;
+}
+
+ul{
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Lato', sans-serif;
+  color: #000;
+}
+
+p{
+  font-size: 24px;
+  color: #666666;
+  font-family: 'Bellefair', serif;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+a:hover{
+  color: #16ED9D;
+}
+
+.menu{
+  position: absolute;
+  width: 300px;
+  min-height: 100%;
+  padding: 50px;
+  padding-top: 125px;
+  background: #fafafa;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  z-index: 2;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.menu li{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.menu.open{
+  position: fixed;
+  transform: translate(0%, 0);
+}
+
+/* ----- ----- Header ----- ----- */
+.hero{
+  background-image: url(../img/background.gif);
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-content{
+  padding-top: 20px;
+}
+
+.logo{
+  float: left;
+  margin-left: 150px;
+}
+
+.logotipo{
+  margin-left: 0px;
+}
+
+/* ----- ----- Texto animado ----- ----- */
+.principal-information{
+  display: flex;
+  width: 700px;
+  height: 40px;
+  color: #000;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.principal-information ul{
+  list-style: none;
+  padding-left: 20px;
+  animation: change 7s infinite;
+  font-size: 23px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+ul, p{
+  margin: 0;
+}
+
+.title{
+  font-size: 35px;
+  color: #16DE9D;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+@keyframes change{
+  0%{
+    margin-top: 0;
+  }
+  20%{
+    margin-top: 0;
+  }
+  25%{
+    margin-top: -40px;
+  }
+  50%{
+    margin-top: -40px;
+  }
+  55%{
+    margin-top: -80px;
+  }
+  80%{
+    margin-top: -80px;
+  }
+  85%{
+    margin-top: -40px;
+  }
+  95%{
+    margin-top: -40px;
+  }
+  100%{
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .title{
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .principal-information{
+    width: 450px;
+  }
+
+  .principal-information ul{
+    font-size: 16px;
+  }
+}
+
+/* ----- ----- Grid ----- ----- */
+@media only screen and (min-width:768px){
+  .grid-container{
+    margin-bottom: 15px;
+  }
+
+  .grid-container::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  [class*="columns"]{
+    padding: 0 10px;
+    float: left;
+  }
+  .columns1-4{
+    width: 25%;
+  }
+  .columns2-4{
+    width: 50%;
+  }
+  .columns3-4{
+    width: 75%;
+  }
+  .columns1-3{
+    width: 33.3%;
+  }
+  .columns2-3{
+    width: 66.6%;
+  }
+}
+
+/* ----- ----- Sections ----- ----- */
+
+.title-section {
+  font-size: 32px;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.description-section{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.divider-section{
+  width: 50px;
+  height: 3px;
+  background: #16DE9D;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* ----- ----- We ----- ----- */
+.we{
+  background: #fff;
+  padding: 50px 0;
+}
+
+.we img{
+  width: 75%;
+  background-size: cover;
+  border-radius: 2px;
+  border: 5px solid #f2f2f2;
+  margin-top: 25px;
+}
+
+.we-image{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.we-container p{
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+@media only screen and (max-width:768px){
+  .we-container h1, .we-container p{
+    text-align: center;
+  }
+}
+
+.image-effect{
+  transform: rotate(-8deg);
+}
+
+/* ----- ----- Services ----- ----- */
+.services{
+  background: #f2f2f2;
+  padding: 50px 0;
+}
+
+.article-service{
+  margin-bottom: 20px;
+}
+
+.article-service .icon-service{
+  float: left;
+  background: #16de9d;
+  padding: 16px;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid #16ed9d;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+
+.article-service .icon-service i{
+  color: #fff;
+  font-size: 24px;
+}
+
+.article-service .icon-service:hover{
+  background: #fff;
+}
+
+.article-service .icon-service:hover i{
+  color: #16de9d;
+}
+
+.article-service .title-service{
+  margin-left: 80px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.article-service .description-service{
+  margin-left: 80px;
+  line-height: 24px;
+}
+
+/* ----- ----- Portfolio ----- ----- */
+.proyects{
+  background: #fff;
+  padding: 50px 0;
+}
+
+.proyects .portfolio-icon{
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 260px;
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.proyects .portfolio-icon .details{
+  height: 260px;
+  background: #fff;
+  display: table-cell;
+  vertical-align: middle;
+  opacity: 0;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.proyects .portfolio-icon .details h4{
+  font-size: 16px;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  transform: translate3d(0, -15px, 0);
+  -webkit-transform: translate3d(0, -15px, 0);
+  color: #000;
+}
+
+.proyects .portfolio-icon .details span{
+  display: block;
+  color: #000;
+  font-size: 15px;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate3d(0, 15px, 0);
+  transform: translate3d(0, 15px, 0);
+}
+
+.proyects .portfolio-icon:hover .details{
+  opacity: 0.8;
+}
+
+.proyects .portfolio-icon:hover .details h4, .proyects .portfolio-icon:hover .details span{
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* ----- ----- Prices ----- ----- */
+.prices{
+  background: #f2f2f2;
+  padding: 50px 0;
+}
+
+.box-price{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.content-price{
+  background: #fff;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  position: relative;
+  border-radius: 4px;
+}
+
+.content-price:hover{
+  margin-top: -10px;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  -webkit-box-shadow: 0 2 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-price.general-price{
+  z-index: 0;
+}
+
+.content-price h3{
+  background-color: #16de9d;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 30px 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.content-price h2{
+  background: #8ed922;
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 30px 0;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.content-price h2 span{
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.content-price h2 sup{
+  font-size: 18px;
+}
+
+.content-price ul{
+  list-style: none;
+  margin: 25px 0;
+}
+
+.content-price li{
+  border-top: 1px solid #efefef;
+  width: 85%;
+  color: #333;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.content-price li:first-child{
+  border-top: none;
+}
+
+.content-price li i{
+  float: right;
+}
+
+.content-price li del{
+  color: #aaa;
+}
+
+.button-price{
+  background: #16de9d;
+  text-align: center;
+  padding: 25px 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.button-price:hover{
+  background: #3bbec0;
+}
+
+.content-price p{
+  background: #f8f8f8;
+  padding: 20px;
+}
+
+.content-price.offered{
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: 0 2 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-price.offered h2{
+  font-size: 38px;
+  padding: 45px 0;
+}
+
+.fa-check::before{
+  content: "\f00c";
+  color: green;
+  font-size: 25px;
+}
+
+.fa-remove::before, .fa-times::before, .fa-close::before{
+  content: "\f00d";
+  color: red;
+  font-size: 25px;
+}
+
+.fa-clock::before{
+  content: "\f017";
+  color: chartreuse;
+  font-size: 25px;
+}
+
+/* ----- ----- Contact Form ----- ----- */
+.contact{
+  background: #e2e2e2;
+  padding: 50px 0;
+}
+
+@media only screen and (min-width: 768px){
+  .booking-contact{
+    margin: 15px 250px 15px 250px;
+  }
+}
+
+.booking-contact .field{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.booking-contact .field input, .booking-contact .field textarea{
+  min-width: 100%;
+  border: 2px solid #16de9d;
+  padding: 15px 10px;
+}
+
+.booking-contact .field textarea{
+  height: 200px;
+}
+
+.form-button{
+  border: none;
+  margin: 0 auto;
+  display: block;
+  padding: 20px 25px 20px 25px;
+  text-align: center;
+  background-color: #16de9d;
+  color: #fff;
+
+}
+
+.form-button:hover{
+  background-color: #3bbec0;
+}
+
+/* ----- ----- Footer ----- ----- */
+.footer{
+  background-color: #f2f2f2;
+}
+
+footer{
+  text-align: center;
+  padding: 25px 0;
+}
+
+footer p{
+  color: #a4a4a4;
+  font-family: 'Bellefair', serif;
+  font-size: 16px;
+}
+
+.social-menu{
+  margin-bottom: 25px
+}
+
+.social-networks{
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.social-networks li{
+  display: inline-block;
+}
+
+.social-networks a{
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: #16de9d;
+  color: #fff;
+  transition: background .3s ease-in-out;
+  -webkit-transition: background .3s ease-in-out;
+}
+
+.social-networks a:hover{
+  background-color: #3bbec0;
+}
+
+.social-menu .social-networks li a{
+  margin: 0 5px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
